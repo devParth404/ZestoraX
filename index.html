@@ -1,0 +1,534 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ZestoraX</title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+    <style>
+        html {
+            scroll-behavior: smooth;
+        }
+        
+         :root {
+            --bg: #050509;
+            --card: #0f0f1a;
+            --text: #ffffff;
+            --accent: #00f7ff;
+        }
+        
+        body {
+            margin: 0;
+            font-family: 'Segoe UI', sans-serif;
+            background: var(--bg);
+            color: var(--text);
+        }
+        
+        header {
+            position: fixed;
+            width: 100%;
+            padding: 12px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: rgba(0, 0, 0, 0.7);
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+        }
+        
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .logo img {
+            width: 40px;
+            border-radius: 8px;
+        }
+        
+        .logo h2 {
+            color: var(--accent);
+        }
+        
+        .header-right {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+        
+        nav {
+            display: flex;
+            flex-wrap: wrap;
+        }
+        
+        nav a {
+            margin: 0 10px;
+            color: white;
+            cursor: pointer;
+            text-decoration: none;
+        }
+        
+        .toggle {
+            padding: 8px 12px;
+            background: var(--accent);
+            color: black;
+            border-radius: 20px;
+            cursor: pointer;
+        }
+        
+        .menu-btn {
+            display: none;
+            font-size: 24px;
+            color: var(--accent);
+            cursor: pointer;
+        }
+        
+        @media(max-width:768px) {
+            nav {
+                position: absolute;
+                top: 65px;
+                right: 10px;
+                background: #000;
+                width: 200px;
+                flex-direction: column;
+                display: none;
+                border-radius: 10px;
+            }
+            nav.active {
+                display: flex;
+            }
+            nav a {
+                padding: 12px;
+                border-bottom: 1px solid #222;
+            }
+            .menu-btn {
+                display: block;
+            }
+        }
+        
+        .hero {
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            position: relative;
+        }
+        
+        .hero video {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            z-index: -1;
+        }
+        
+        .hero h1 {
+            font-size: 55px;
+            color: var(--accent);
+        }
+        
+        .hero-buttons button {
+            padding: 12px 25px;
+            margin: 10px;
+            border-radius: 30px;
+            border: none;
+        }
+        
+        .btn1 {
+            background: var(--accent);
+        }
+        
+        .btn2 {
+            border: 2px solid var(--accent);
+            background: none;
+            color: var(--accent);
+        }
+        
+        .section {
+            max-width: 1200px;
+            margin: auto;
+            padding: 90px 20px;
+        }
+        
+        .section h2 {
+            text-align: center;
+            margin-bottom: 40px;
+            color: var(--accent);
+        }
+        
+        .cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 30px;
+        }
+        
+        .premium-card {
+            position: relative;
+            padding: 30px;
+            border-radius: 20px;
+            background: linear-gradient(135deg, #0a0a1a, #050509);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+        }
+        
+        .badge {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: bold;
+        }
+        
+        .paid {
+            background: #003a1f;
+            color: #00ff99;
+        }
+        
+        .unpaid {
+            background: #3a0000;
+            color: #ff4d4d;
+        }
+        
+        .card-header {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 20px;
+        }
+        
+        .icon {
+            width: 45px;
+            height: 45px;
+            background: #111;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 12px;
+        }
+        
+        .tag {
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-size: 12px;
+        }
+        
+        .yellow {
+            background: #332500;
+            color: #ffcc00;
+        }
+        
+        .blue {
+            background: #002a3a;
+            color: #00c3ff;
+        }
+        
+        .pink {
+            background: #3a0025;
+            color: #ff4fa3;
+        }
+        
+        .card-btn {
+            display: inline-block;
+            margin-top: 15px;
+            padding: 10px 18px;
+            border-radius: 25px;
+            background: var(--accent);
+            color: black;
+            text-decoration: none;
+        }
+        
+        .why {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
+        
+        .why div {
+            background: var(--card);
+            padding: 20px;
+            border-radius: 15px;
+        }
+        
+        .team {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 25px;
+        }
+        
+        .member {
+            background: var(--card);
+            padding: 20px;
+            border-radius: 20px;
+            text-align: center;
+        }
+        
+        .member img {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+        }
+        
+        .role {
+            opacity: 0.6;
+        }
+        
+        .contact {
+            font-size: 12px;
+        }
+        
+        .form-box {
+            max-width: 900px;
+            margin: auto;
+            background: #0b0b1a;
+            padding: 40px;
+            border-radius: 20px;
+        }
+        
+        .grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+        
+        .full {
+            grid-column: span 2;
+        }
+        
+        input,
+        select,
+        textarea {
+            width: 100%;
+            padding: 12px;
+            border-radius: 10px;
+            border: none;
+            background: #111;
+            color: white;
+        }
+        
+        textarea {
+            height: 120px;
+        }
+        
+        .send {
+            margin-top: 20px;
+            padding: 15px;
+            width: 100%;
+            background: var(--accent);
+            border: none;
+            border-radius: 10px;
+        }
+        
+        footer {
+            background: #000;
+            padding: 30px;
+            text-align: center;
+        }
+        
+        .social a {
+            margin: 0 10px;
+            color: var(--accent);
+            font-size: 20px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <div class="logo">
+            <img src="https://res.cloudinary.com/dxar2t0kt/image/upload/v1774517436/WhatsApp_Image_2026-03-17_at_09.10.31-removebg-preview_ax11cq.png">
+            <h2>ZestoraX</h2>
+        </div>
+
+        <div class="menu-btn" onclick="toggleMenu()">☰</div>
+
+        <div class="header-right">
+            <nav id="nav">
+                <a onclick="go('home')">Home</a>
+                <a onclick="go('cards')">Services</a>
+                <a onclick="go('why')">Why Us</a>
+                <a onclick="go('team')">Team</a>
+                <a onclick="go('form')">Contact</a>
+            </nav>
+
+            <div class="toggle" onclick="toggle()">🌙</div>
+        </div>
+    </header>
+
+    <section id="home" class="hero">
+        <video autoplay muted loop>
+<source src="./video.mp4.mp4">
+</video>
+
+        <div>
+            <h1>ZestoraX</h1>
+            <p>Where Idea Meets Opportunity</p>
+
+            <div class="hero-buttons">
+                <button class="btn1" onclick="go('cards')">Explore</button>
+                <button class="btn2" onclick="go('form')">Inquiry</button>
+            </div>
+        </div>
+    </section>
+
+    <section id="cards" class="section">
+        <h2>Our Services</h2>
+
+        <div class="cards">
+
+            <div class="premium-card">
+                <span class="badge unpaid">Unpaid</span>
+                <div class="card-header">
+                    <div class="icon yellow">🏆</div>
+                    <span class="tag yellow">Coming Soon</span>
+                </div>
+                <h3>Upcoming Hackathons And Events</h3>
+                <p>Compete, build projects, win prizes and gain recognition.</p>
+                <a href="list.html" class="card-btn">View →</a>
+            </div>
+
+            <div class="premium-card">
+                <span class="badge paid">Paid</span>
+                <div class="card-header">
+                    <div class="icon blue">📅</div>
+                    <span class="tag blue">Explore</span>
+                </div>
+                <h3>Project And Idea Support</h3>
+                <p>mentorship, Reourses & get whole guideance.</p>
+
+                <!-- ✅ WhatsApp Redirect -->
+                <a href="https://wa.me/917768836063?text=Hello%20ZestoraX,%0AI%20am%20interested%20in%20Project%20and%20Idea%20Support." target="_blank" class="card-btn">View →</a>
+            </div>
+
+            <div class="premium-card">
+                <span class="badge unpaid">Unpaid</span>
+                <div class="card-header">
+                    <div class="icon pink">🎓</div>
+                    <span class="tag pink">Apply Now</span>
+                </div>
+                <h3>Upcoming Internships</h3>
+                <p>Real experience with mentorship and career growth.</p>
+
+            </div>
+
+        </div>
+    </section>
+
+    <section id="why" class="section">
+        <h2>Why Choose Us</h2>
+        <div class="why">
+            <div>🚀 Fast Growth Opportunities
+                <p>We provide real opportunities to grow faster through projects and internships.</p>
+            </div>
+            <div>🤝 Strong Community
+                <p>Connect, collaborate and grow with like-minded people.</p>
+            </div>
+            <div>💡 Real Projects
+                <p>Gain practical experience by working on real-world problems.</p>
+            </div>
+            <div>🎯 Career Support
+                <p>Get mentorship and guidance to achieve your goals.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="team" class="section">
+        <h2>Our Team</h2>
+        <div class="team">
+            <div class="member"><img src="https://res.cloudinary.com/dxar2t0kt/image/upload/v1774522010/Gemini_Generated_Image_dasn98dasn98dasn_xoamje.png">
+                <h4>Miss. Sakshi Handifode</h4>
+                <p class="role">Founder</p>
+                <p class="contact">sakshihandifode@gmail.com</p>
+            </div>
+            <div class="member"><img src="https://res.cloudinary.com/dxar2t0kt/image/upload/v1774518655/Developer.img_oenlwr.png">
+                <h4>Mr. Parth Mehatre</h4>
+                <p class="role">Developer</p>
+                <p class="contact">mehatre.parth10@gmail.com</p>
+            </div>
+            <div class="member"><img src="https://res.cloudinary.com/dxar2t0kt/image/upload/v1774524615/Gemini_Generated_Image_gyfxwtgyfxwtgyfx_qnyrag.png">
+                <h4>Mr. Omkar Nikam</h4>
+                <p class="role">Designer</p>
+                <p class="contact">omkarnikam1599@gmail.com</p>
+            </div>
+            <div class="member"><img src="https://via.placeholder.com/200">
+                <h4>Mr. Kartik Naik</h4>
+                <p class="role">Marketing</p>
+                <p class="contact">member4@email.com</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="form" class="section">
+        <h2>Get In Touch</h2>
+        <div class="form-box">
+            <div class="grid">
+                <input id="name" placeholder="Name">
+                <input id="email" placeholder="Email">
+
+                <div class="full">
+                    <select>
+<option>Select</option>
+<option>General Inquiry</option>
+<option>Project Inquiry</option>
+<option>Team Joining Inquiry</option>
+<option>Collaboration Inquiry</option>
+<option>Invest / Partner Inquiry</option>
+</select>
+                </div>
+
+                <div class="full">
+                    <textarea id="msg" placeholder="Message"></textarea>
+                </div>
+            </div>
+
+            <button class="send" onclick="send()">Send Message</button>
+        </div>
+    </section>
+
+    <footer>
+        <p>📞 +91-7768836063</p>
+        <p>📧 team.zestorax@gmail.com</p>
+
+        <div class="social">
+            <a href="https://www.instagram.com/zestorax?igsh=MWwyeTQwMWF2aXgxOA==" target="_blank">
+                <i class="fa-brands fa-instagram"></i>
+            </a>
+            <a href="#"><i class="fa-brands fa-linkedin"></i></a>
+            <a href="#"><i class="fa-brands fa-github"></i></a>
+        </div>
+    </footer>
+
+    <script>
+        function go(id) {
+            document.getElementById(id).scrollIntoView({
+                behavior: 'smooth'
+            });
+        }
+
+        function toggleMenu() {
+            document.getElementById("nav").classList.toggle("active");
+        }
+
+        function toggle() {
+            document.body.classList.toggle("light");
+        }
+
+        function send() {
+            let name = document.getElementById("name").value;
+            let email = document.getElementById("email").value;
+            let msg = document.getElementById("msg").value;
+
+            let text = encodeURIComponent(`Hello ZestoraX,\n\nName: ${name}\nEmail: ${email}\nMessage: ${msg}`);
+            let url = "https://wa.me/917768836063?text=" + text;
+            window.open(url, "_blank");
+        }
+    </script>
+
+</body>
+
+</html>

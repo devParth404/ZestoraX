@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Coming Soon - ZestoraX</title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+    <style>
+         :root {
+            --bg: #050509;
+            --card: #0f0f1a;
+            --text: #fff;
+            --accent: #00f7ff;
+        }
+        
+        body {
+            margin: 0;
+            font-family: 'Segoe UI';
+            background: var(--bg);
+            color: var(--text);
+        }
+        /* HEADER */
+        
+        header {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            height: 65px;
+            padding: 0 30px;
+            display: flex;
+            align-items: center;
+            background: rgba(0, 0, 0, 0.85);
+            z-index: 1000;
+        }
+        
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .logo img {
+            width: 40px;
+            height: 40px;
+            border-radius: 8px;
+        }
+        
+        .logo h2 {
+            color: var(--accent);
+            margin: 0;
+        }
+        /* BACK BUTTON */
+        
+        .back-btn {
+            margin-top: 90px;
+            margin-left: 20px;
+            display: inline-block;
+            padding: 10px 18px;
+            background: var(--accent);
+            color: black;
+            border-radius: 20px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+        
+        .back-btn:hover {
+            transform: scale(1.05);
+        }
+        /* SECTION */
+        
+        .section {
+            max-width: 1200px;
+            margin: auto;
+            padding: 120px 20px 60px;
+            text-align: center;
+        }
+        /* TITLE ANIMATION */
+        
+        .coming-title {
+            font-size: 52px;
+            color: var(--accent);
+            margin-bottom: 20px;
+            animation: glow 2s infinite alternate, float 3s ease-in-out infinite;
+        }
+        /* TEXT ANIMATION */
+        
+        .coming-text {
+            font-size: 18px;
+            max-width: 600px;
+            margin: auto;
+            line-height: 1.6;
+            opacity: 0;
+            animation: fadeUp 1.5s ease forwards;
+            animation-delay: 0.5s;
+        }
+        /* GLOW EFFECT */
+        
+        @keyframes glow {
+            from {
+                text-shadow: 0 0 10px var(--accent), 0 0 20px var(--accent);
+            }
+            to {
+                text-shadow: 0 0 20px var(--accent), 0 0 40px var(--accent);
+            }
+        }
+        /* FLOAT EFFECT */
+        
+        @keyframes float {
+            0%,
+            100% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-10px);
+            }
+        }
+        /* FADE UP */
+        
+        @keyframes fadeUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        /* FOOTER */
+        
+        footer {
+            background: #000;
+            padding: 60px 20px;
+            text-align: center;
+            margin-top: 40px;
+            border-top: 1px solid rgba(255, 255, 255, 0.08);
+        }
+        
+        footer p {
+            margin: 8px 0;
+            font-size: 14px;
+        }
+        
+        .social {
+            margin-top: 15px;
+        }
+        
+        .social a {
+            margin: 0 10px;
+            color: var(--accent);
+            font-size: 20px;
+            transition: 0.3s;
+        }
+        
+        .social a:hover {
+            color: #fff;
+            transform: scale(1.2);
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <div class="logo">
+            <img src="https://res.cloudinary.com/dxar2t0kt/image/upload/v1774517436/WhatsApp_Image_2026-03-17_at_09.10.31-removebg-preview_ax11cq.png">
+            <h2>ZestoraX</h2>
+        </div>
+    </header>
+
+    <div class="back-btn" onclick="goBack()">← Back</div>
+
+    <section class="section">
+
+        <h1 class="coming-title">🚀 Coming Soon</h1>
+
+        <p class="coming-text">
+            Sorry for the inconvenience 🙏 <br><br> This feature will be launching tomorrow at
+            <b>7:00 PM, 27 March 2026</b>.<br><br> We are working hard to bring this to you. Stay tuned!
+        </p>
+
+    </section>
+
+    <footer>
+        <p>📞 +91-7768836063</p>
+        <p>📧 team.zestorax@gmail.com</p>
+
+        <div class="social">
+            <a href="https://www.instagram.com/zestorax" target="_blank">
+                <i class="fa-brands fa-instagram"></i>
+            </a>
+            <a href="#"><i class="fa-brands fa-linkedin"></i></a>
+            <a href="#"><i class="fa-brands fa-github"></i></a>
+        </div>
+    </footer>
+
+    <script>
+        function goBack() {
+            window.history.back();
+        }
+    </script>
+
+</body>
+
+</html>
