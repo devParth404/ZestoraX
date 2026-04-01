@@ -9,9 +9,16 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
     <style>
+        /* GLOBAL FIX */
+        
+        * {
+            box-sizing: border-box;
+        }
+        
         html {
             scroll-behavior: smooth;
         }
+        /* DARK */
         
          :root {
             --bg: #050509;
@@ -19,30 +26,47 @@
             --text: #ffffff;
             --accent: #00f7ff;
         }
+        /* LIGHT */
+        
+        body.light {
+            --bg: #f5f5f5;
+            --card: #ffffff;
+            --text: #111;
+            --accent: #007bff;
+        }
         
         body {
             margin: 0;
+            overflow-x: hidden;
             font-family: 'Segoe UI', sans-serif;
             background: var(--bg);
             color: var(--text);
+            transition: 0.3s;
         }
+        /* HEADER */
         
         header {
             position: fixed;
             width: 100%;
-            padding: 12px 20px;
+            padding: 12px 15px;
             display: flex;
-            justify-content: space-between;
             align-items: center;
+            justify-content: space-between;
             background: rgba(0, 0, 0, 0.7);
             backdrop-filter: blur(10px);
             z-index: 1000;
         }
         
+        body.light header {
+            background: rgba(255, 255, 255, 0.7);
+        }
+        /* LOGO */
+        
         .logo {
             display: flex;
             align-items: center;
             gap: 10px;
+            min-width: 150px;
         }
         
         .logo img {
@@ -53,46 +77,56 @@
         .logo h2 {
             color: var(--accent);
         }
-        
-        .header-right {
-            display: flex;
-            align-items: center;
-            gap: 15px;
-        }
+        /* NAV */
         
         nav {
             display: flex;
-            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: center;
+            flex: 1;
         }
         
         nav a {
-            margin: 0 10px;
-            color: white;
-            cursor: pointer;
+            color: var(--text);
             text-decoration: none;
+            cursor: pointer;
         }
+        /* CONTROLS */
+        
+        .controls {
+            display: flex;
+            gap: 10px;
+            justify-content: flex-end;
+            min-width: 120px;
+        }
+        /* TOGGLE */
         
         .toggle {
-            padding: 8px 12px;
+            padding: 6px 10px;
             background: var(--accent);
             color: black;
-            border-radius: 20px;
+            border-radius: 50px;
             cursor: pointer;
         }
+        /* MENU */
         
         .menu-btn {
-            display: none;
-            font-size: 24px;
+            font-size: 26px;
             color: var(--accent);
             cursor: pointer;
+            display: none;
         }
+        /* MOBILE */
         
         @media(max-width:768px) {
+            .menu-btn {
+                display: block;
+            }
             nav {
                 position: absolute;
                 top: 65px;
                 right: 10px;
-                background: #000;
+                background: var(--card);
                 width: 200px;
                 flex-direction: column;
                 display: none;
@@ -105,10 +139,8 @@
                 padding: 12px;
                 border-bottom: 1px solid #222;
             }
-            .menu-btn {
-                display: block;
-            }
         }
+        /* HERO */
         
         .hero {
             height: 100vh;
@@ -131,6 +163,7 @@
             font-size: 55px;
             color: var(--accent);
         }
+        /* BUTTONS */
         
         .hero-buttons button {
             padding: 12px 25px;
@@ -148,6 +181,7 @@
             background: none;
             color: var(--accent);
         }
+        /* SECTION */
         
         .section {
             max-width: 1200px;
@@ -160,6 +194,7 @@
             margin-bottom: 40px;
             color: var(--accent);
         }
+        /* CARDS */
         
         .cards {
             display: grid;
@@ -171,8 +206,7 @@
             position: relative;
             padding: 30px;
             border-radius: 20px;
-            background: linear-gradient(135deg, #0a0a1a, #050509);
-            border: 1px solid rgba(255, 255, 255, 0.08);
+            background: var(--card);
         }
         
         .badge {
@@ -182,7 +216,6 @@
             padding: 5px 12px;
             border-radius: 20px;
             font-size: 12px;
-            font-weight: bold;
         }
         
         .paid {
@@ -241,6 +274,7 @@
             color: black;
             text-decoration: none;
         }
+        /* WHY */
         
         .why {
             display: grid;
@@ -253,6 +287,7 @@
             padding: 20px;
             border-radius: 15px;
         }
+        /* TEAM */
         
         .team {
             display: grid;
@@ -272,19 +307,12 @@
             height: 120px;
             border-radius: 50%;
         }
-        
-        .role {
-            opacity: 0.6;
-        }
-        
-        .contact {
-            font-size: 12px;
-        }
+        /* FORM */
         
         .form-box {
             max-width: 900px;
             margin: auto;
-            background: #0b0b1a;
+            background: var(--card);
             padding: 40px;
             border-radius: 20px;
         }
@@ -310,6 +338,13 @@
             color: white;
         }
         
+        body.light input,
+        body.light select,
+        body.light textarea {
+            background: #eee;
+            color: black;
+        }
+        
         textarea {
             height: 120px;
         }
@@ -322,9 +357,10 @@
             border: none;
             border-radius: 10px;
         }
+        /* FOOTER */
         
         footer {
-            background: #000;
+            background: var(--card);
             padding: 30px;
             text-align: center;
         }
@@ -340,26 +376,28 @@
 <body>
 
     <header>
+
         <div class="logo">
             <img src="https://res.cloudinary.com/dxar2t0kt/image/upload/v1774517436/WhatsApp_Image_2026-03-17_at_09.10.31-removebg-preview_ax11cq.png">
             <h2>ZestoraX</h2>
         </div>
 
-        <div class="menu-btn" onclick="toggleMenu()">☰</div>
+        <nav id="nav">
+            <a onclick="go('home')">Home</a>
+            <a onclick="go('cards')">Services</a>
+            <a onclick="go('why')">Why Us</a>
+            <a onclick="go('team')">Team</a>
+            <a onclick="go('form')">Contact</a>
+        </nav>
 
-        <div class="header-right">
-            <nav id="nav">
-                <a onclick="go('home')">Home</a>
-                <a onclick="go('cards')">Services</a>
-                <a onclick="go('why')">Why Us</a>
-                <a onclick="go('team')">Team</a>
-                <a onclick="go('form')">Contact</a>
-            </nav>
-
-            <div class="toggle" onclick="toggle()">🌙</div>
+        <div class="controls">
+            <div class="toggle" id="themeBtn" onclick="toggleTheme()">🌙</div>
+            <div class="menu-btn" onclick="toggleMenu()">☰</div>
         </div>
+
     </header>
 
+    <!-- HERO -->
     <section id="home" class="hero">
         <video autoplay muted loop>
 <source src="./video.mp4.mp4">
@@ -376,6 +414,7 @@
         </div>
     </section>
 
+    <!-- SERVICES -->
     <section id="cards" class="section">
         <h2>Our Services</h2>
 
@@ -399,10 +438,9 @@
                     <span class="tag blue">Explore</span>
                 </div>
                 <h3>Project And Idea Support</h3>
-                <p>mentorship, Reourses & get whole guideance.</p>
+                <p>Mentorship, resources & complete guidance.</p>
+                <a href="idea_suppport.html" class="card-btn">View →</a>
 
-                <!-- ✅ WhatsApp Redirect -->
-                <a href="https://wa.me/917768836063?text=Hello%20ZestoraX,%0AI%20am%20interested%20in%20Project%20and%20Idea%20Support." target="_blank" class="card-btn">View →</a>
             </div>
 
             <div class="premium-card">
@@ -413,60 +451,74 @@
                 </div>
                 <h3>Upcoming Internships</h3>
                 <p>Real experience with mentorship and career growth.</p>
-
+                <a href="internship_list.html" class="card-btn">View →</a>
             </div>
 
         </div>
     </section>
 
+    <!-- WHY -->
     <section id="why" class="section">
         <h2>Why Choose Us</h2>
         <div class="why">
             <div>🚀 Fast Growth Opportunities
-                <p>We provide real opportunities to grow faster through projects and internships.</p>
+                <p>We provide real opportunities to grow faster.</p>
             </div>
             <div>🤝 Strong Community
-                <p>Connect, collaborate and grow with like-minded people.</p>
+                <p>Connect & collaborate.</p>
             </div>
             <div>💡 Real Projects
-                <p>Gain practical experience by working on real-world problems.</p>
+                <p>Work on real-world problems.</p>
             </div>
             <div>🎯 Career Support
-                <p>Get mentorship and guidance to achieve your goals.</p>
+                <p>Get mentorship and guidance.</p>
             </div>
         </div>
     </section>
 
+    <!-- TEAM -->
     <section id="team" class="section">
         <h2>Our Team</h2>
         <div class="team">
-            <div class="member"><img src="https://res.cloudinary.com/dxar2t0kt/image/upload/v1774522010/Gemini_Generated_Image_dasn98dasn98dasn_xoamje.png">
+
+            <div class="member">
+                <img src="https://res.cloudinary.com/dxar2t0kt/image/upload/v1774522010/Gemini_Generated_Image_dasn98dasn98dasn_xoamje.png">
                 <h4>Miss. Sakshi Handifode</h4>
                 <p class="role">Founder</p>
                 <p class="contact">sakshihandifode@gmail.com</p>
             </div>
-            <div class="member"><img src="https://res.cloudinary.com/dxar2t0kt/image/upload/v1774518655/Developer.img_oenlwr.png">
+
+            <div class="member">
+                <img src="https://res.cloudinary.com/dxar2t0kt/image/upload/v1774518655/Developer.img_oenlwr.png">
                 <h4>Mr. Parth Mehatre</h4>
                 <p class="role">Developer</p>
                 <p class="contact">mehatre.parth10@gmail.com</p>
             </div>
-            <div class="member"><img src="https://res.cloudinary.com/dxar2t0kt/image/upload/v1774524615/Gemini_Generated_Image_gyfxwtgyfxwtgyfx_qnyrag.png">
+
+            <div class="member">
+                <img src="https://res.cloudinary.com/dxar2t0kt/image/upload/v1774524615/Gemini_Generated_Image_gyfxwtgyfxwtgyfx_qnyrag.png">
                 <h4>Mr. Omkar Nikam</h4>
                 <p class="role">Designer</p>
                 <p class="contact">omkarnikam1599@gmail.com</p>
             </div>
-            <div class="member"><img src="https://via.placeholder.com/200">
+
+            <div class="member">
+                <img src="https://via.placeholder.com/200">
                 <h4>Mr. Kartik Naik</h4>
                 <p class="role">Marketing</p>
                 <p class="contact">member4@email.com</p>
             </div>
+
         </div>
     </section>
 
+    <!-- CONTACT -->
     <section id="form" class="section">
         <h2>Get In Touch</h2>
+
         <div class="form-box">
             <div class="grid">
+
                 <input id="name" placeholder="Name">
                 <input id="email" placeholder="Email">
 
@@ -484,20 +536,20 @@
                 <div class="full">
                     <textarea id="msg" placeholder="Message"></textarea>
                 </div>
+
             </div>
 
             <button class="send" onclick="send()">Send Message</button>
         </div>
     </section>
 
+    <!-- FOOTER -->
     <footer>
         <p>📞 +91-7768836063</p>
         <p>📧 team.zestorax@gmail.com</p>
 
         <div class="social">
-            <a href="https://www.instagram.com/zestorax?igsh=MWwyeTQwMWF2aXgxOA==" target="_blank">
-                <i class="fa-brands fa-instagram"></i>
-            </a>
+            <a href="https://www.instagram.com/zestorax" target="_blank"><i class="fa-brands fa-instagram"></i></a>
             <a href="#"><i class="fa-brands fa-linkedin"></i></a>
             <a href="#"><i class="fa-brands fa-github"></i></a>
         </div>
@@ -514,8 +566,30 @@
             document.getElementById("nav").classList.toggle("active");
         }
 
-        function toggle() {
-            document.body.classList.toggle("light");
+        function toggleTheme() {
+            const body = document.body;
+            const btn = document.getElementById("themeBtn");
+
+            body.classList.toggle("light");
+
+            if (body.classList.contains("light")) {
+                btn.innerHTML = "☀️";
+                localStorage.setItem("theme", "light");
+            } else {
+                btn.innerHTML = "🌙";
+                localStorage.setItem("theme", "dark");
+            }
+        }
+
+        window.onload = function() {
+            const saved = localStorage.getItem("theme");
+
+            if (saved === "light") {
+                document.body.classList.add("light");
+                document.getElementById("themeBtn").innerHTML = "☀️";
+            } else {
+                document.getElementById("themeBtn").innerHTML = "🌙";
+            }
         }
 
         function send() {
@@ -524,8 +598,7 @@
             let msg = document.getElementById("msg").value;
 
             let text = encodeURIComponent(`Hello ZestoraX,\n\nName: ${name}\nEmail: ${email}\nMessage: ${msg}`);
-            let url = "https://wa.me/917768836063?text=" + text;
-            window.open(url, "_blank");
+            window.open("https://wa.me/917768836063?text=" + text, "_blank");
         }
     </script>
 
