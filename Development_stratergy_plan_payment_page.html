@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Payment - ZestoraX</title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+        
+         :root {
+            --bg: #050509;
+            --card: #0f0f1a;
+            --text: #fff;
+            --accent: #00f7ff;
+        }
+        
+        body {
+            margin: 0;
+            font-family: 'Segoe UI', sans-serif;
+            background: var(--bg);
+            color: var(--text);
+        }
+        /* HEADER */
+        
+        header {
+            position: fixed;
+            width: 100%;
+            padding: 12px 15px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: rgba(0, 0, 0, 0.7);
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+        }
+        
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .logo img {
+            width: 40px;
+            border-radius: 8px;
+        }
+        
+        .logo h2 {
+            color: var(--accent);
+        }
+        
+        nav {
+            display: flex;
+            gap: 20px;
+        }
+        
+        nav a {
+            text-decoration: none;
+            color: var(--text);
+        }
+        /* MAIN */
+        
+        .section {
+            max-width: 900px;
+            margin: auto;
+            padding: 100px 20px;
+        }
+        
+        h1 {
+            text-align: center;
+            color: var(--accent);
+        }
+        /* CARDS */
+        
+        .cards {
+            display: grid;
+            gap: 30px;
+            margin-top: 40px;
+        }
+        
+        .card {
+            background: var(--card);
+            padding: 25px;
+            border-radius: 20px;
+            text-align: center;
+        }
+        /* UPI BUTTON */
+        
+        .upi-btn {
+            display: inline-block;
+            text-decoration: none;
+            color: var(--accent);
+            margin-top: 20px;
+            transition: 0.3s;
+        }
+        
+        .upi-btn:hover {
+            transform: scale(1.1);
+        }
+        
+        .upi-btn i {
+            font-size: 70px;
+        }
+        
+        .upi-btn p {
+            margin-top: 10px;
+            font-size: 16px;
+        }
+        /* QR */
+        
+        .qr img {
+            width: 220px;
+            margin-top: 20px;
+            border-radius: 10px;
+        }
+        /* LABEL */
+        
+        .label {
+            margin-top: 15px;
+            font-size: 14px;
+            color: #aaa;
+        }
+        /* FOOTER */
+        
+        footer {
+            background: var(--card);
+            text-align: center;
+            padding: 30px;
+        }
+        
+        .social a {
+            margin: 0 10px;
+            color: var(--accent);
+            font-size: 20px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <div class="logo">
+            <img src="https://res.cloudinary.com/dxar2t0kt/image/upload/v1774517436/WhatsApp_Image_2026-03-17_at_09.10.31-removebg-preview_ax11cq.png">
+            <h2>ZestoraX</h2>
+        </div>
+
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="index.html#cards">Services</a>
+            <a href="index.html#form">Contact</a>
+        </nav>
+    </header>
+
+    <section class="section">
+
+        <h1>Complete Your Payment 💳</h1>
+
+        <div class="cards">
+
+            <!-- MOBILE PAYMENT -->
+            <div class="card">
+                <h2>📱 Pay via UPI</h2>
+
+                <a href="upi://pay?pa=mehatre.parth10-1@oksbi&pn=ZestoraX&am=349&cu=INR&tn=Plan Purchase" class="upi-btn">
+                    <i class="fa-solid fa-credit-card"></i>
+                    <p>Open Payment Apps</p>
+                </a>
+
+                <p class="label">For Mobile Phones</p>
+            </div>
+
+            <!-- QR PAYMENT -->
+            <div class="card qr">
+                <h2>💻 Scan QR Code</h2>
+
+                <img src="./idea_stratergy_plan_QR.jpeg">
+
+                <p class="label">For Laptop & Desktop</p>
+            </div>
+
+        </div>
+
+    </section>
+
+    <footer>
+        <p>📞 +91-7768836063</p>
+        <p>📧 team.zestorax@gmail.com</p>
+
+        <div class="social">
+            <a href="https://www.instagram.com/zestorax"><i class="fa-brands fa-instagram"></i></a>
+            <a href="#"><i class="fa-brands fa-linkedin"></i></a>
+            <a href="https://github.com/devParth404/ZestoraX"><i class="fa-brands fa-github"></i></a>
+            <a href="https://www.facebook.com/profile.php?id=61580699111340"><i class="fa-brands fa-facebook"></i></a>
+            <a href="https://www.youtube.com/@team_zestora"><i class="fa-brands fa-youtube"></i></a>
+        </div>
+    </footer>
+
+</body>
+
+</html>

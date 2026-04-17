@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hackathon Plans - ZestoraX</title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+        
+        html {
+            scroll-behavior: smooth;
+        }
+        
+         :root {
+            --bg: #050509;
+            --card: #0f0f1a;
+            --text: #fff;
+            --accent: #00f7ff;
+        }
+        
+        body.light {
+            --bg: #f5f5f5;
+            --card: #fff;
+            --text: #111;
+            --accent: #007bff;
+        }
+        
+        body {
+            margin: 0;
+            font-family: 'Segoe UI', sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            transition: 0.3s;
+        }
+        /* HEADER */
+        
+        header {
+            position: fixed;
+            width: 100%;
+            padding: 12px 15px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background: rgba(0, 0, 0, 0.7);
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+        }
+        
+        body.light header {
+            background: rgba(255, 255, 255, 0.7);
+        }
+        
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .logo img {
+            width: 40px;
+            border-radius: 8px;
+        }
+        
+        .logo h2 {
+            color: var(--accent);
+        }
+        
+        nav {
+            display: flex;
+            gap: 20px;
+        }
+        
+        nav a {
+            color: var(--text);
+            text-decoration: none;
+            cursor: pointer;
+        }
+        /* CONTROLS */
+        
+        .controls {
+            display: flex;
+            gap: 10px;
+        }
+        
+        .toggle {
+            padding: 6px 10px;
+            background: var(--accent);
+            color: black;
+            border-radius: 50px;
+            cursor: pointer;
+        }
+        
+        .menu-btn {
+            font-size: 26px;
+            color: var(--accent);
+            cursor: pointer;
+            display: none;
+        }
+        
+        @media(max-width:768px) {
+            .menu-btn {
+                display: block;
+            }
+            nav {
+                position: absolute;
+                top: 65px;
+                right: 10px;
+                background: var(--card);
+                width: 200px;
+                flex-direction: column;
+                display: none;
+                border-radius: 10px;
+            }
+            nav.active {
+                display: flex;
+            }
+            nav a {
+                padding: 12px;
+                border-bottom: 1px solid #222;
+            }
+        }
+        /* SECTION */
+        
+        .section {
+            max-width: 1200px;
+            margin: auto;
+            padding: 120px 20px 60px;
+        }
+        
+        .section h2 {
+            text-align: center;
+            margin-bottom: 40px;
+            color: var(--accent);
+        }
+        /* CARDS */
+        
+        .cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+        }
+        
+        .card {
+            background: var(--card);
+            border-radius: 20px;
+            overflow: hidden;
+            text-align: center;
+            transition: 0.3s;
+        }
+        
+        .card:hover {
+            transform: translateY(-8px);
+        }
+        /* IMAGE */
+        
+        .card img {
+            width: 100%;
+            height: 180px;
+            object-fit: cover;
+        }
+        /* CONTENT */
+        
+        .card-content {
+            padding: 20px;
+        }
+        /* BUTTON */
+        
+        .btn {
+            margin-top: 15px;
+            display: inline-block;
+            padding: 10px 18px;
+            border-radius: 25px;
+            background: var(--accent);
+            color: black;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        /* FOOTER */
+        
+        footer {
+            background: var(--card);
+            padding: 30px;
+            text-align: center;
+        }
+        
+        .social a {
+            margin: 0 10px;
+            color: var(--accent);
+            font-size: 20px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+
+        <div class="logo">
+            <img src="https://res.cloudinary.com/dxar2t0kt/image/upload/v1774517436/WhatsApp_Image_2026-03-17_at_09.10.31-removebg-preview_ax11cq.png">
+            <h2>ZestoraX</h2>
+        </div>
+
+        <nav id="nav">
+            <a href="index.html">Home</a>
+            <a href="index.html#cards">Services</a>
+            <a href="index.html#form">Contact</a>
+        </nav>
+
+        <div class="controls">
+            <div class="toggle" id="themeBtn" onclick="toggleTheme()">🌙</div>
+            <div class="menu-btn" onclick="toggleMenu()">☰</div>
+        </div>
+
+    </header>
+
+    <!-- MAIN -->
+    <section class="section">
+        <h2>ZestoraX Guidance Plans</h2>
+
+        <div class="cards">
+
+            <!-- BASIC -->
+            <div class="card">
+                <img src="./idea support basic plan.png">
+                <div class="card-content">
+                    <h3>ZestoraX Basic Plan</h3>
+                    <p>💡 Turn your raw idea into a powerful hackathon concept that stands out.</p>
+                    <a href="idea_basic_plan.html" class="btn">See More</a>
+                </div>
+            </div>
+
+            <!-- STRATEGY -->
+            <div class="card">
+                <img src="./idea support stratergy plan.png">
+                <div class="card-content">
+                    <h3>ZestoraX Strategy Plan</h3>
+                    <p>🚀 Learn winning strategies and gain an edge over other teams.</p>
+                    <a href="idea_stratergy_plan.html" class=" btn ">See More</a>
+                </div>
+            </div>
+
+            <!-- SPECIAL -->
+            <div class="card ">
+                <img src="./idea support special pack.png">
+                <div class="card-content ">
+                    <h3>ZestoraX Special Plan</h3>
+                    <p>🔥 Complete mentorship from idea to final submission — dominate your hackathon.</p>
+                    <a href="idea_special_plan.html" class=" btn ">See More</a>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        <p>📞 +91-7768836063</p>
+        <p>📧 team.zestorax@gmail.com</p>
+
+        <div class="social ">
+            <a href="https://www.instagram.com/zestorax " target="_blank "><i class="fa-brands fa-instagram "></i></a>
+            <a href="# "><i class="fa-brands fa-linkedin "></i></a>
+            <a href="https://github.com/devParth404/ZestoraX"><i class="fa-brands fa-github "></i></a>
+            <a href="https://www.facebook.com/profile.php?id=61580699111340"><i class="fa-brands fa-facebook"></i></a>
+            <a href="https://www.youtube.com/@team_zestora"><i class="fa-brands fa-youtube"></i></a>
+        </div>
+    </footer>
+
+    <script>
+        function toggleMenu() {
+            document.getElementById("nav ").classList.toggle("active ");
+        }
+
+        function toggleTheme() {
+            const body = document.body;
+            const btn = document.getElementById("themeBtn ");
+
+            body.classList.toggle("light ");
+
+            if (body.classList.contains("light ")) {
+                btn.innerHTML = "☀️ ";
+                localStorage.setItem("theme ", "light ");
+            } else {
+                btn.innerHTML = "🌙 ";
+                localStorage.setItem("theme ", "dark ");
+            }
+        }
+
+        window.onload = function() {
+            const saved = localStorage.getItem("theme ");
+
+            if (saved === "light ") {
+                document.body.classList.add("light ");
+                document.getElementById("themeBtn ").innerHTML = "☀️ ";
+            }
+        }
+    </script>
+
+</body>
+
+</html>

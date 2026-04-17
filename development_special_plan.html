@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ZestoraX Special Plan</title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+        
+         :root {
+            --bg: #050509;
+            --card: #0f0f1a;
+            --text: #fff;
+            --accent: #00f7ff;
+        }
+        
+        body.light {
+            --bg: #f5f5f5;
+            --card: #fff;
+            --text: #111;
+            --accent: #007bff;
+        }
+        
+        body {
+            margin: 0;
+            font-family: 'Segoe UI', sans-serif;
+            background: var(--bg);
+            color: var(--text);
+        }
+        /* HEADER */
+        
+        header {
+            position: fixed;
+            width: 100%;
+            padding: 12px 15px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: rgba(0, 0, 0, 0.7);
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+        }
+        
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .logo img {
+            width: 40px;
+            border-radius: 8px;
+        }
+        
+        .logo h2 {
+            color: var(--accent);
+        }
+        
+        nav {
+            display: flex;
+            gap: 20px;
+        }
+        
+        nav a {
+            text-decoration: none;
+            color: var(--text);
+        }
+        
+        .controls {
+            display: flex;
+            gap: 10px;
+        }
+        
+        .toggle {
+            padding: 6px 10px;
+            background: var(--accent);
+            border-radius: 50px;
+            cursor: pointer;
+            color: black;
+        }
+        
+        .menu-btn {
+            display: none;
+            font-size: 26px;
+            color: var(--accent);
+        }
+        
+        @media(max-width:768px) {
+            .menu-btn {
+                display: block;
+            }
+            nav {
+                position: absolute;
+                top: 65px;
+                right: 10px;
+                flex-direction: column;
+                background: var(--card);
+                width: 200px;
+                display: none;
+                border-radius: 10px;
+            }
+            nav.active {
+                display: flex;
+            }
+            nav a {
+                padding: 12px;
+                border-bottom: 1px solid #222;
+            }
+        }
+        /* IMAGE */
+        
+        .top-image {
+            width: 100%;
+            height: 350px;
+            object-fit: cover;
+            margin-top: 65px;
+        }
+        /* CONTENT */
+        
+        .section {
+            max-width: 900px;
+            margin: auto;
+            padding: 60px 20px;
+        }
+        
+        h1 {
+            color: var(--accent);
+        }
+        
+        h2 {
+            margin-top: 30px;
+            color: var(--accent);
+        }
+        
+        p {
+            line-height: 1.7;
+        }
+        
+        ul {
+            line-height: 1.8;
+        }
+        /* PRICE */
+        
+        .price-box {
+            margin-top: 40px;
+            text-align: center;
+            background: var(--card);
+            padding: 30px;
+            border-radius: 20px;
+        }
+        
+        .price {
+            font-size: 40px;
+            font-weight: bold;
+            color: var(--accent);
+        }
+        
+        .btn {
+            margin-top: 20px;
+            display: inline-block;
+            padding: 12px 25px;
+            border-radius: 30px;
+            background: var(--accent);
+            color: black;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        /* FOOTER */
+        
+        footer {
+            background: var(--card);
+            text-align: center;
+            padding: 30px;
+        }
+        
+        .social a {
+            margin: 0 10px;
+            color: var(--accent);
+            font-size: 20px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <div class="logo">
+            <img src="https://res.cloudinary.com/dxar2t0kt/image/upload/v1774517436/WhatsApp_Image_2026-03-17_at_09.10.31-removebg-preview_ax11cq.png">
+            <h2>ZestoraX</h2>
+        </div>
+
+        <nav id="nav">
+            <a href="index.html">Home</a>
+            <a href="index.html#cards">Services</a>
+            <a href="index.html#form">Contact</a>
+        </nav>
+
+        <div class="controls">
+            <div class="toggle" id="themeBtn" onclick="toggleTheme()">🌙</div>
+            <div class="menu-btn" onclick="toggleMenu()">☰</div>
+        </div>
+    </header>
+
+    <!-- ONLY IMAGE -->
+    <img src="./development special plan.png" class="top-image">
+
+    <section class="section">
+
+        <h1>ZestoraX Special Plan 🔥</h1>
+
+        <p>
+            This is the ultimate hackathon support plan. From idea to final submission, you get complete mentorship and personal guidance to dominate competitions.
+        </p>
+
+        <h2>📌 What You Get</h2>
+        <ul>
+            <li>PDF Format</li>
+            <li>Idea Selection</li>
+            <li>Software Model</li>
+            <li>PPT Of Project</li>
+            <li>Dought Support</li>
+            <li>Doumentation Support</li>
+        </ul>
+
+        <h2>🔥 Benefits</h2>
+        <ul>
+            <li>All services are included</li>
+            <li>Personal Guidance</li>
+            <li>Strong project + presentation</li>
+            <li>On Time Project Deployment</li>
+        </ul>
+
+        <h2>🎯 Who Is This For?</h2>
+        <ul>
+            <li>Serious hackathon participants</li>
+            <li>Teams aiming to win</li>
+            <li>Students needing full guidance</li>
+        </ul>
+
+        <div class="price-box">
+            <p class="price">₹399</p>
+            <a href="./development_special_plan_payment.html" class="btn">Buy Now</a>
+        </div>
+
+    </section>
+
+    <footer>
+        <p>📞 +91-7768836063</p>
+        <p>📧 team.zestorax@gmail.com</p>
+
+        <div class="social">
+            <a href="https://www.instagram.com/zestorax" target="_blank"><i class="fa-brands fa-instagram"></i></a>
+            <a href="#"><i class="fa-brands fa-linkedin"></i></a>
+            <a href="https://github.com/devParth404/ZestoraX"><i class="fa-brands fa-github"></i></a>
+            <a href="https://www.facebook.com/profile.php?id=61580699111340"><i class="fa-brands fa-facebook"></i></a>
+            <a href="https://www.youtube.com/@team_zestora"><i class="fa-brands fa-youtube"></i></a>
+        </div>
+    </footer>
+
+    <script>
+        function toggleMenu() {
+            document.getElementById("nav").classList.toggle("active");
+        }
+
+        function toggleTheme() {
+            const body = document.body;
+            const btn = document.getElementById("themeBtn");
+
+            body.classList.toggle("light");
+
+            if (body.classList.contains("light")) {
+                btn.innerHTML = "☀️";
+                localStorage.setItem("theme", "light");
+            } else {
+                btn.innerHTML = "🌙";
+                localStorage.setItem("theme", "dark");
+            }
+        }
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ZestoraX</title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+    <style>
+         :root {
+            --bg: #050509;
+            --card: #0f0f1a;
+            --text: #fff;
+            --accent: #00f7ff;
+        }
+        
+        body {
+            margin: 0;
+            font-family: 'Segoe UI';
+            background: var(--bg);
+            color: var(--text);
+        }
+        
+        .page {
+            display: none;
+        }
+        
+        .active-page {
+            display: block;
+        }
+        
+        header {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            height: 65px;
+            padding: 0 30px;
+            display: flex;
+            align-items: center;
+            background: rgba(0, 0, 0, 0.85);
+            z-index: 1000;
+        }
+        
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .logo img {
+            width: 40px;
+            height: 40px;
+            border-radius: 8px;
+        }
+        
+        .logo h2 {
+            color: var(--accent);
+            margin: 0;
+        }
+        
+        .section {
+            max-width: 1200px;
+            margin: auto;
+            padding: 100px 20px 60px;
+        }
+        
+        .cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+        }
+        
+        .premium-card {
+            padding: 20px;
+            border-radius: 20px;
+            background: linear-gradient(135deg, #0a0a1a, #050509);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+        }
+        
+        .card-btn,
+        .apply-btn {
+            display: inline-block;
+            margin-top: 10px;
+            padding: 10px 16px;
+            background: var(--accent);
+            color: black;
+            border-radius: 20px;
+            text-decoration: none;
+            cursor: pointer;
+        }
+        
+        .back-btn {
+            margin-top: 90px;
+            margin-left: 20px;
+            display: inline-block;
+            padding: 10px 16px;
+            background: var(--accent);
+            color: black;
+            border-radius: 20px;
+            cursor: pointer;
+        }
+        /* Footer */
+        
+        footer {
+            background: #000;
+            padding: 60px 20px;
+            text-align: center;
+            margin-top: 40px;
+            border-top: 1px solid rgba(255, 255, 255, 0.08);
+        }
+        
+        footer p {
+            margin: 8px 0;
+            font-size: 14px;
+        }
+        
+        .social a {
+            margin: 0 10px;
+            color: var(--accent);
+            font-size: 20px;
+        }
+        /* Card Hover */
+        
+        .hack-card {
+            transition: 0.3s;
+        }
+        
+        .hack-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 0 25px var(--accent);
+        }
+        
+        .img-box {
+            overflow: hidden;
+            border-radius: 12px;
+            margin-bottom: 12px;
+        }
+        
+        .img-box img {
+            width: 100%;
+            transition: 0.4s;
+        }
+        
+        .hack-card:hover img {
+            transform: scale(1.1);
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- ================= HOME ================= -->
+    <div id="homePage" class="page active-page">
+
+        <header>
+            <div class="logo">
+                <img src="https://res.cloudinary.com/dxar2t0kt/image/upload/v1774517436/WhatsApp_Image_2026-03-17_at_09.10.31-removebg-preview_ax11cq.png">
+                <h2>ZestoraX</h2>
+            </div>
+        </header>
+
+        <section class="section">
+            <h2>Explore Opportunities</h2>
+
+            <div class="cards">
+                <div class="premium-card">
+                    <h3>🏆 Hackathon List</h3>
+                    <div class="card-btn" onclick="openPage('hackListPage')">View →</div>
+                </div>
+
+                <div class="premium-card">
+                    <h3>📅 Event List</h3>
+                    <div class="card-btn" onclick="openPage('eventListPage')">View →</div>
+                </div>
+
+                <div class="premium-card">
+                    <h3>🎓 Webinar List</h3>
+                    <div class="card-btn" onclick="openPage('webinarlstPage')">View →</div>
+                </div>
+            </div>
+        </section>
+
+        <footer>
+            <p>📞 +91-7768836063</p>
+            <p>📧 team.zestorax@gmail.com</p>
+            <div class="social">
+                <a href="https://www.instagram.com/zestorax" target="_blank"><i class="fa-brands fa-instagram"></i></a>
+                <a href="#"><i class="fa-brands fa-linkedin"></i></a>
+                <a href="#"><i class="fa-brands fa-github"></i></a>
+            </div>
+        </footer>
+
+    </div>
+
+    <!-- ================= HACKATHONS ================= -->
+    <div id="hackListPage" class="page">
+
+        <header>
+            <div class="logo"><img src="https://res.cloudinary.com/dxar2t0kt/image/upload/v1774517436/WhatsApp_Image_2026-03-17_at_09.10.31-removebg-preview_ax11cq.png">
+                <h2>ZestoraX</h2>
+            </div>
+        </header>
+        <div class="back-btn" onclick="openPage('homePage')">← Back</div>
+
+        <section class="section">
+            <h2 style="color:var(--accent)">List of Hackathons</h2>
+
+            <div class="cards">
+
+                <!-- 6 Cards -->
+                <div class="premium-card hack-card">
+
+                    <h3>CODESRIIJAN - National Hackathon on AI for Bharat</h3>
+                    <p>Focuses on building AI-based solutions for Indian problems (Bharat-centric innovation).</p>
+                    <p>📍 ABES Engineering College, Gaziabad</p>
+                    <p>📅 16 April 2026</p>
+                    <p>⏰ 9 AM Onwords</p>
+                    <p>⏳ 24-36 Hours</p>
+                    <a href="https://devfolio.co/" class="apply-btn">View More</a>
+                </div>
+
+                <div class="premium-card hack-card">
+
+                    <h3>Locus' Paygentic Hackathon </h3>
+                    <p>Hack Agents That Can Make You Money!
+
+                    </p>
+                    <p>📍 Online</p>
+                    <p>📅 1-6 May 2026</p>
+                    <p>⏰ 09 AM Onwords</p>
+                    <p>⏳ 1 Week</p>
+                    <a href="https://paygentic-week4.devfolio.co/overview" class="apply-btn">View More</a>
+                </div>
+
+                <div class="premium-card hack-card">
+
+                    <h3>Hackowasp 8.0</h3>
+                    <p> Innovation at the Intersection of Web3 and Security</p>
+                    <p>📍 Thapar Institute Of Enineering & Technology, Patiala</p>
+                    <p>📅 18th April</p>
+                    <p>⏰ 11 AM</p>
+                    <p>⏳ 36 Hours</p>
+                    <a href="https://unstop.com/hackathons/hackowasp-80-thapar-institute-of-engineering-and-technology-tiet-patiala-1675300" class="apply-btn">View More</a>
+                </div>
+
+                <div class="premium-card hack-card">
+
+                    <h3>DATASPHERE 2026: Hackathon</h3>
+                    <p> AI & IoT for Smart Industrial Ecosystems: Optimizing Energy, Resources, and Waste for a Sustainable Economy</p>
+                    <p>📍 Shri Venkateswara College, Delhi</p>
+                    <p>📅 18 April</p>
+                    <p>⏰ 10 AM - 5 PM</p>
+                    <p>⏳ 9 Hours</p>
+                    <a href="https://unstop.com/hackathons/datasphere-2026-hackathon-sri-venkateswara-college-svc-du-delhi-1675026" class="apply-btn">View More</a>
+                </div>
+
+                <div class="premium-card hack-card">
+
+                    <h3>Accenture Customer Service Representative Hiring Challenge</h3>
+                    <p>Be the voice that makes a difference: Build a career in Customer Service</p>
+                    <p>📍 Online</p>
+                    <p>📅 30 April</p>
+                    <p>⏰ 4 PM</p>
+                    <p>⏳ NA</p>
+                    <a href="https://unstop.com/competitions/crp-accenture-customer-service-representative-hiring-challenge-accenture-1673256" class=" apply-btn ">Apply Now</a>
+                </div>
+
+                <div class="premium-card hack-card ">
+                    <h3>Web3 Buildathon</h3>
+                    <p>Blockchain apps.</p>
+                    <p>📍 Online</p>
+                    <p>📅 30 April</p>
+                    <p>⏰ 8 AM</p>
+                    <p>⏳ 36 Hours</p>
+                    <a href="comingsoon.html " class="apply-btn ">Apply Now</a>
+                </div>
+
+            </div>
+        </section>
+
+        <footer>
+            <p>📞 +91-7768836063</p>
+            <p>📧 team.zestorax@gmail.com</p>
+            <div class="social ">
+                <a href="https://www.instagram.com/zestorax " target="_blank "><i class="fa-brands fa-instagram "></i></a>
+            </div>
+        </footer>
+
+    </div>
+
+    <!-- ================= EVENTS ================= -->
+    <!-- ================= EVENTS ================= -->
+    <div id="eventListPage" class="page">
+
+        <header>
+            <div class="logo">
+                <img src="https://res.cloudinary.com/dxar2t0kt/image/upload/v1774517436/WhatsApp_Image_2026-03-17_at_09.10.31-removebg-preview_ax11cq.png">
+                <h2>ZestoraX</h2>
+            </div>
+        </header>
+
+        <div class="back-btn" onclick="openPage('homePage')">← Back</div>
+
+        <section class="section">
+            <h2 style="color:var(--accent)">Events</h2>
+
+            <div class="cards">
+                <!-- your event cards -->
+
+                <div class="premium-card hack-card">
+
+                    <h3>IPL Auction</h3>
+                    <p>Test your team’s ability to think under pressure, optimize decisions, and turn insights into a winning lineup</p>
+                    <p>📍 SSCBS Campus, Delhi</p>
+                    <p>📅 21 & 23 April 2026</p>
+                    <p>⏰ 12 PM Onwords</p>
+                    <a href="https://unstop.com/events/ipl-auction-shaheed-sukhdev-college-of-business-studies-sscbs-du-delhi-1675780" class="apply-btn">View More</a>
+                </div>
+                <div class="premium-card hack-card">
+
+                    <h3>UEC - Valorant Delhi Qualifiers</h3>
+                    <p>The UEC Delhi Qualifiers is an inter-college esports tournament featuring Valorant, aimed at identifying top collegiate talent and providing a platform to compete at a higher level.</p>
+                    <p>📍 Delhi Skill & Entrepreneurship University, Delhi</p>
+                    <p>📅 21 April 2026</p>
+                    <p>⏰ 10:37 AM</p>
+                    <a href="https://unstop.com/events/uec-valorant-delhi-qualifiers-delhi-skill-and-entrepreneurship-university-dseunew-delhi-1675001" class="apply-btn">View More</a>
+                </div>
+                <div class="premium-card hack-card">
+
+                    <h3>The Disclosure - Inter - College Debate Competition</h3>
+                    <p>Think you can argue your point convincingly?
+                    </p>
+                    <p>📍 IILM University, Noida</p>
+                    <p>📅 22 April 2026</p>
+                    <p>⏰ NA</p>
+                    <a href="https://unstop.com/events/the-disclosure-inter-college-debate-competition-iilm-graduate-school-of-management-iilm-greater-noida-1673764" class="apply-btn">View More</a>
+                </div>
+                <div class="premium-card hack-card">
+
+                    <h3>LUMIERE'26 : Trailer making competition
+                    </h3>
+                    <p>Pratibimb The Film society of Mata Sundri college for women brings you the exciting opportunity to craft a compelling trailer and let your storytelling shine on the big screen.</p>
+                    <p>📍 Mata Sundri College For Women, New Delhi</p>
+                    <p>📅 25 April 2026</p>
+                    <p>⏰ NA</p>
+                    <a href="https://unstop.com/events/lumiere26-trailer-making-competition-mata-sundri-college-for-women-university-of-delhi-delhi-1674182" class="apply-btn">View More</a>
+                </div>
+                <div class="premium-card hack-card">
+
+                    <h3>Robo Saga</h3>
+                    <p>A new generation of bots have arrived and are ready to compete in an arena to test their speed, agility and strength</p>
+                    <p>📍B.I.T College, Sindri, Dhanbad </p>
+                    <p>📅 09 May 2026</p>
+                    <p>⏰ 3 PM</p>
+                    <a href="https://unstop.com/events/robo-saga-sandhaan26-birsa-institute-of-technology-bit-sindri-1673987" class="apply-btn">View More</a>
+                </div>
+
+            </div>
+        </section>
+
+        <footer>
+            <p>📞 +91-7768836063</p>
+            <p>📧 team.zestorax@gmail.com</p>
+        </footer>
+
+    </div>
+
+    <!-- ================= WEBINARS ================= -->
+    <!-- ================= WEBINARS ================= -->
+    <div id="webinarlstPage" class="page">
+
+        <header>
+            <div class="logo">
+                <img src="https://res.cloudinary.com/dxar2t0kt/image/upload/v1774517436/WhatsApp_Image_2026-03-17_at_09.10.31-removebg-preview_ax11cq.png">
+                <h2>ZestoraX</h2>
+            </div>
+        </header>
+
+        <div class="back-btn" onclick="openPage('homePage')">← Back</div>
+
+        <section class="section">
+            <h2 style="color:var(--accent)">Webinars</h2>
+
+            <div class="cards">
+                <div class="premium-card hack-card">
+                    <h3>AI Masterclass</h3>
+                    <a href="#" class="apply-btn">Join</a>
+                </div>
+
+                <div class="premium-card hack-card">
+                    <h3>Web Dev Bootcamp</h3>
+                    <a href="#" class="apply-btn">Join</a>
+                </div>
+            </div>
+        </section>
+
+        <footer>
+            <p>📞 +91-7768836063</p>
+            <p>📧 team.zestorax@gmail.com</p>
+        </footer>
+
+    </div>
+    </footer>
+
+    </div>
+
+    <script>
+        function openPage(pageId) {
+            // Hide all pages
+            document.querySelectorAll('.page').forEach(page => {
+                page.classList.remove('active-page');
+            });
+
+            // Show selected page
+            const selectedPage = document.getElementById(pageId);
+
+            if (selectedPage) {
+                selectedPage.classList.add('active-page');
+            } else {
+                console.error("Wrong ID:", pageId);
+            }
+        }
+    </script>
+
+</body>
+
+</html>
